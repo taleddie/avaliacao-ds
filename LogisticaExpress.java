@@ -1,15 +1,17 @@
 
+import java.awt.*;
 import javax.swing.*;
 
 public class LogisticaExpress {
     public static void main(String[] args) {
 
         JFrame janela = new JFrame();
-        janela.setSize(300, 400);
+        janela.setSize(200, 250);
         janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         JPanel painel = new JPanel();
         painel.setSize(300, 300);
+        painel.setLayout(new BoxLayout(painel, BoxLayout.Y_AXIS));
 
         JLabel label = new JLabel();
         label.setText("Logística Express");
@@ -17,17 +19,24 @@ public class LogisticaExpress {
         JLabel label1 = new JLabel();
         label1.setText("Distância(km)");
         JTextField textDistancia = new JTextField(10);
+        textDistancia.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JLabel label2 = new JLabel();
         label2.setText("Peso(kg)");
         JTextField textPeso = new JTextField(10);
+        textPeso.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         String[] opcoes = { "Normal", "Expresso" };
         JComboBox<String> comboEnvio = new JComboBox<>(opcoes);
+        comboEnvio.setAlignmentX(Component.LEFT_ALIGNMENT);
 
         JButton btn = new JButton("Calcular");
 
         JLabel resultado = new JLabel();
+
+        textDistancia.setMaximumSize(new Dimension(150, 25));
+        textPeso.setMaximumSize(new Dimension(150, 25));
+        comboEnvio.setMaximumSize(new Dimension(100, 25));
 
         painel.add(label);
 
